@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cors()); // Asegúrate de colocar esto antes de las rutas
 app.use('/api/peliculas', peliculasRoutes); // Montar rutas
 
-sequelize.sync()
+sequelize.sync({force: false})
     .then(() => console.log("La base de datos y las tablas han sido sincronizadas"))
     .catch(err => console.error("Error al sincronizar la base de datos", err))
 
@@ -28,5 +28,5 @@ app.listen(PORT, () => {
 })
 
 
-module.exports = { Pelicula, Genero, Actor, Director, Comentario, comentarioXusuarioXpelicula,Usuario, Rol_Usuario };//Recien agg
+module.exports = { Pelicula, Genero, Actor, Director, Comentario, comentarioXusuarioXpelicula, Usuario, Rol_Usuario };//Recien agg
 
