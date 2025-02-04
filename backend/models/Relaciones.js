@@ -11,17 +11,17 @@ const Rol_Usuario = require('./Rol_Usuario')
 //Pelicula.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_pelicula', allowNull: false });
 //Comentario.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_comentario', allowNull: false});
 
-Usuario.belongsToMany(Pelicula, { through: 'peliculaXusuario'});
-Pelicula.belongsToMany(Usuario, { through: 'peliculaXusuario'});
+Usuario.belongsToMany(Pelicula, { through: 'peliculaXusuario', onDelete: 'CASCADE'});
+Pelicula.belongsToMany(Usuario, { through: 'peliculaXusuario', onDelete: 'CASCADE'});
 
 //Rol_Usuario.hasMany(Usuario, { foreignKey: 'id_rol', allowNull: false });
 //Usuario.belongsTo(Rol_Usuario, { foreignKey: 'id_rol', allowNull: false });
 
-Pelicula.belongsToMany(Genero, { through: 'generoXpelicula'});
-Genero.belongsToMany(Pelicula, {through: 'generoXpelicula'});
+Pelicula.belongsToMany(Genero, { through: 'generoXpelicula', onDelete: 'CASCADE'});
+Genero.belongsToMany(Pelicula, {through: 'generoXpelicula', onDelete: 'CASCADE'});
 
-Pelicula.belongsToMany(Actor, { through: 'actorXpelicula'});
-Actor.belongsToMany(Pelicula, {through: 'actorXpelicula' });
+Pelicula.belongsToMany(Actor, { through: 'actorXpelicula', onDelete: 'CASCADE'});
+Actor.belongsToMany(Pelicula, {through: 'actorXpelicula', onDelete: 'CASCADE' });
 
-Pelicula.belongsToMany(Director, { through: 'directorXpelicula'});
-Director.belongsToMany(Pelicula, {through: 'directorXpelicula'});
+Pelicula.belongsToMany(Director, { through: 'directorXpelicula', onDelete: 'CASCADE'});
+Director.belongsToMany(Pelicula, {through: 'directorXpelicula', onDelete: 'CASCADE'});
