@@ -1,4 +1,4 @@
-/*const { DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../database/db');
 
 const Rol_Usuario = sequelize.define("Rol_Usuario",{
@@ -11,4 +11,3 @@ const Rol_Usuario = sequelize.define("Rol_Usuario",{
 })
 
 module.exports = Rol_Usuario;
-*/
