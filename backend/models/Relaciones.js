@@ -7,15 +7,15 @@ const comentarioXusuarioXpelicula = require('./comentarioXusuarioXpelicula');
 const Usuario = require('./Usuario');
 const Rol_Usuario = require('./Rol_Usuario')
 
-Usuario.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_usuario', allownull: false });
-Pelicula.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_pelicula', allownull: false });
-Comentario.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_comentario', allownull: false});
+Usuario.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_usuario', allowNull: false });
+Pelicula.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_pelicula', allowNull: false });
+Comentario.hasMany(comentarioXusuarioXpelicula, { foreignKey: 'id_comentario', allowNull: false});
 
 Usuario.belongsToMany(Pelicula, { through: 'peliculaXusuario'});
 Pelicula.belongsToMany(Usuario, { through: 'peliculaXusuario'});
 
-Rol_Usuario.hasMany(Usuario, { foreignKey: 'id_rol', allownull: false });
-Usuario.belongsTo(Rol_Usuario, { foreignKey: 'id_rol', allownull: false });
+Rol_Usuario.hasMany(Usuario, { foreignKey: 'id_rol', allowNull: false });
+Usuario.belongsTo(Rol_Usuario, { foreignKey: 'id_rol', allowNull: false });
 
 Pelicula.belongsToMany(Genero, { through: 'generoXpelicula'});
 Genero.belongsToMany(Pelicula, {through: 'generoXpelicula'});
