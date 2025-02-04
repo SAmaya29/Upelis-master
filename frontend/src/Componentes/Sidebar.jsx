@@ -6,13 +6,13 @@ const Sidebar = ({ setFiltroGenero, setFiltroAno }) => {
 
   useEffect(() => {
     const fetchGeneros = async () => {
-      const res = await fetch('http://localhost:5000/api/peliculas/generos');
+      const res = await fetch('https://upelis.onrender.com/api/peliculas/generos');
       const data = await res.json();
       setGeneros(data);
     };
 
     const fetchAnios = async () => {
-      const res = await fetch('http://localhost:5000/api/peliculas/anios');
+      const res = await fetch('https://upelis.onrender.com/api/peliculas/anios');
       const data = await res.json();
       setAnios(data);  // Almacenar los años obtenidos de la base de datos
     };

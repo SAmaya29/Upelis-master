@@ -22,7 +22,7 @@ const loginWithGoogle = async () => {
       const user = result.user;
   
       // Enviar datos al backend
-      const response = await fetch("http://localhost:5000/api/auth/google", {
+      const response = await fetch("https://upelis.onrender.com/api/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

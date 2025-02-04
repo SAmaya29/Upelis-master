@@ -37,14 +37,14 @@ const HomePage = () => {
   useEffect(() => {
     const fetchPeliculas = async () => {
       try {
-        let url = 'http://localhost:5000/api/peliculas';
+        let url = 'https://upelis.onrender.com/api/peliculas';
   
         if (filtroGenero) {
-          url = `http://localhost:5000/api/peliculas/genero/${filtroGenero}`;
+          url = `https://upelis.onrender.com/api/peliculas/genero/${filtroGenero}`;
         } else if (filtroAno) {
-          url = `http://localhost:5000/api/peliculas/ano/${filtroAno}`;
+          url = `https://upelis.onrender.com/api/peliculas/ano/${filtroAno}`;
         } else if (filtroNombre) {
-          url = `http://localhost:5000/api/peliculas/nombre/${filtroNombre}`;
+          url = `https://upelis.onrender.com/api/peliculas/nombre/${filtroNombre}`;
         }
   
         const res = await fetch(url);
